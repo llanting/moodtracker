@@ -41,42 +41,42 @@ export default function Create(props) {
           <tbody>
             <tr>
               <td><input type="checkbox" name="keywords" value="work" id="work" className="column"></input>
-              <label for="work">Work</label></td>
+              <label htmlFor="work">Work</label></td>
 
               <td><input type="checkbox" name="keywords" value="weekend" id="weekend" className="column"></input>
-              <label for="weekend">Weekend</label></td>
+              <label htmlFor="weekend">Weekend</label></td>
             </tr>
             <tr>
               <td><input type="checkbox" name="keywords" value="family" id="family" className="column"></input>
-              <label for="family">Family</label></td>
+              <label htmlFor="family">Family</label></td>
 
               <td><input type="checkbox" name="keywords" value="friends" id="friends" className="column"></input>
-              <label for="friends">Friends</label></td>
+              <label htmlFor="friends">Friends</label></td>
             </tr>
             <tr>
               <td><input type="checkbox" name="keywords" value="coding" id="coding"></input>
-              <label for="coding">Coding</label></td>
+              <label htmlFor="coding">Coding</label></td>
 
               <td><input type="checkbox" name="keywords" value="date" id="date"></input>
-              <label for="date">Date</label></td>
+              <label htmlFor="date">Date</label></td>
             </tr>
             <tr>
               <td><input type="checkbox" name="keywords" value="reading" id="reading"></input>
-              <label for="reading">Reading</label></td>
+              <label htmlFor="reading">Reading</label></td>
 
               <td><input type="checkbox" name="keywords" value="daylightlamp" id="daylightlamp"></input>
-              <label for="daylightlamp">DL Lamp</label></td>
+              <label htmlFor="daylightlamp">DL Lamp</label></td>
             </tr>
             <tr>
               <td><input type="checkbox" name="keywords" value="dancing" id="dancing"></input>
-              <label for="friends">Dancing</label></td>
+              <label htmlFor="friends">Dancing</label></td>
 
               <td><input type="checkbox" name="keywords" value="drinking" id="drinking"></input>
-              <label for="drinking">Drinking</label></td>
+              <label htmlFor="drinking">Drinking</label></td>
             </tr>
             <tr>
               <td><input type="checkbox" name="keywords" value={keyword} id="own"></input>
-              <input for="own" style={{width: '100px'}} type="text" placeholder="Add your own" onChange={getKeyword}></input></td>
+              <input htmlFor="own" style={{width: '100px'}} type="text" placeholder="Add your own" onChange={getKeyword}></input></td>
             </tr>
           </tbody>
         </table>
