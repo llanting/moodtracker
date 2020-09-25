@@ -5,7 +5,7 @@ A web app to track your mood and help you gain influence over it.
 JavaScript, React, CSS
 
 ## Server
-This app utilizes a server. See (https://github.com/llanting/moodtracker-server)
+This app utilizes a server. See https://github.com/llanting/moodtracker-server.
 
 
 

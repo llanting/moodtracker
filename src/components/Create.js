@@ -1,36 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './Create.css';
 import moment from 'moment';
-import {API_URL} from '../config';
-import axios from 'axios';
 
 export default function Create(props) {
-
-  // Think of better way to get input of keywords: checkboxes with another one for adding your own keywords
-  // After create new mood, make button disabled! Because you work with new axios-req here, the state doesn't get updated and doesn't include the new date! So instead of axios req, could you make the dateArr (and possibly button) a prop that you send here?
-
-  const [moods, setMoods] = useState(null);
-  const [checkDate, setCheck] = useState(false);
-
+  
   const date = moment()._d;
   const today = moment(date).format('YYYY-MM-DD');
- 
-  useEffect(() => {
-    axios.get(`${API_URL}/moods`)
-    .then((result) => {
-      setMoods(result.data);
-      let dates = result.data.reduce((dateArr, mood) => {
-        let dbDate = mood.date.split('').splice(0, 10).join('');
-        dateArr.push(dbDate);
-        return dateArr;
-      }, [])
-      if (dates.includes(today)) setCheck(true);
-    })
-    .catch((err) => console.log(err, 'Error'));
-  }, [])
 
+  const [keyword, setKeyword] = useState('');
 
-  if (!moods) {
+  const getKeyword = (e) => {
+    setKeyword(e.currentTarget.value);
+  }
+
+  if (!props.dateArr) {
     return <p>Loading...</p>
   }
 
@@ -54,9 +37,51 @@ export default function Create(props) {
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-        <input name="keywords" type="text" placeholder="Enter keywords with a space between each keyword"></input>
+        <table className="checkboxes">
+          <tbody>
+            <tr>
+              <td><input type="checkbox" name="keywords" value="work" id="work" className="column"></input>
+              <label for="work">Work</label></td>
+
+              <td><input type="checkbox" name="keywords" value="weekend" id="weekend" className="column"></input>
+              <label for="weekend">Weekend</label></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="keywords" value="family" id="family" className="column"></input>
+              <label for="family">Family</label></td>
+
+              <td><input type="checkbox" name="keywords" value="friends" id="friends" className="column"></input>
+              <label for="friends">Friends</label></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="keywords" value="coding" id="coding"></input>
+              <label for="coding">Coding</label></td>
+
+              <td><input type="checkbox" name="keywords" value="date" id="date"></input>
+              <label for="date">Date</label></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="keywords" value="reading" id="reading"></input>
+              <label for="reading">Reading</label></td>
+
+              <td><input type="checkbox" name="keywords" value="daylightlamp" id="daylightlamp"></input>
+              <label for="daylightlamp">DL Lamp</label></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="keywords" value="dancing" id="dancing"></input>
+              <label for="friends">Dancing</label></td>
+
+              <td><input type="checkbox" name="keywords" value="drinking" id="drinking"></input>
+              <label for="drinking">Drinking</label></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="keywords" value={keyword} id="own"></input>
+              <input for="own" style={{width: '100px'}} type="text" placeholder="Add your own" onChange={getKeyword}></input></td>
+            </tr>
+          </tbody>
+        </table>
         {
-         checkDate ? <button type="submit" disabled={true}>You can only add a mood once per day</button> : <button type="submit">Add this mood</button>
+          props.dateArr.includes(today) ? <button type="submit" disabled={true}>You can only add a mood once per day</button> : <button type="submit">Add this mood</button>
         }
       </form>
     </div>
