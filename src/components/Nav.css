@@ -3,17 +3,19 @@
   background-color: #43b2ba;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  z-index:3;
 }
 
-#navbar a {
+#navbar a, button {
   float: left;
   display: block;
   color: #eeeeee;
   text-align: center;
-  padding: 14px;
+  padding: 5px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 12px;
 }
 
 

@@ -2,7 +2,11 @@
 /* lite: #eeeeee */
 
 .content{
-  background-color: #eeeeee;
+  background-image: url('eric-ward-wejhq4J-UNo-unsplash.jpg');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  
 }
 
 .sticky {

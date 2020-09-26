@@ -60,6 +60,8 @@ export default function HappyPie(props) {
     setIndex(index);
   };
 
+  const allMoods = ['sad', 'happy', 'neutral', 'depressed'];
+
   if (!props.moods) return <p>Loading...</p>;
 
   const onlyMoods = props.moods.reduce((arr, mood) => {
@@ -71,34 +73,23 @@ export default function HappyPie(props) {
     let regex = new RegExp(mood, "g")
     return onlyMoods.toString().match(regex) ? onlyMoods.toString().match(regex).length : 0;
   }
- 
-  const happyData = [
-    {
-      "name": "sad",
-      "value": getAmount("sad"),
-    },
-    {
-      "name": "neutral",
-      "value": getAmount("neutral"),
-    },
-    {
-      "name": "depressed",
-      "value": getAmount("depressed"),
-    },
-    {
-      "name": "happy",
-      "value": getAmount("happy"),
-    }
-  ];
+
+  const happyData = allMoods.reduce((arr, word) => {
+    arr.push({
+      "name": word,
+      "value": getAmount(word)
+    })
+    return arr;
+  }, []);
 
   const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
   return (
-    <PieChart width={750} height={750}>
+    <PieChart width={750} height={300}>
       <Pie
         data={happyData}
         cx={200}
-        cy={150}
+        cy={100}
         labelLine={false}
         outerRadius={80}
         fill="#8884d8"

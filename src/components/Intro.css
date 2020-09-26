@@ -1,7 +1,13 @@
 #intro {
-  height: 60vh;
-  padding: 50px 50px;
-  background-color: #43b2ba;
-  margin: 50px;
-  border-radius: 5px;
+  padding: 45px;
+  overflow: hidden;
+  color: white;
+  padding-top: 0px;
 }
+
+.intro-text {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  margin-top: 20px;
+} 

@@ -8,7 +8,7 @@ export default function Nav(props) {
   return (
     <>
     <nav id="navbar">
-      <Link to="/"><img src={logo} style={{width: '200px', height: 'auto', margin: '5px'}} alt="logo"></img></Link>
+      <Link to="/"><img src={logo} style={{width: '100px', height: 'auto', margin: '1px'}} alt="logo"></img></Link>
       <a href={'#intro'}>Home</a>
       <a href={'#create'}>Create</a>
       <a href={'#stats'}>Stats</a>

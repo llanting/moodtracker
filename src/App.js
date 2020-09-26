@@ -4,7 +4,6 @@ import {Switch, Route, withRouter} from 'react-router-dom';
 import {API_URL} from './config';
 import axios from 'axios';
 import Nav from './components/Nav';
-import Intro from './components/Intro';
 import Signup from './components/User/Signup';
 import Signin from './components/User/Signin';
 import MoodHome from './components/MoodHome';
@@ -15,6 +14,7 @@ function App() {
   // Add profile-page
   // If you added keyword, make it appear on the list and enable adding new one
   // More stats
+  // Responsiveness
   // Add css animations
   // Add shadows etc
 
@@ -83,7 +83,6 @@ function App() {
     <>
       <Nav onLogOut={handleLogOut}/>
       <div className="content">
-        <Intro />
         <UserContext.Provider value = {loggedInUser}>
         <Switch>
           <Route exact path="/" render={() => {

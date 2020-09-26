@@ -1,0 +1,23 @@
+.signin {
+  margin: 50px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+form input, button {
+  margin: 5px;
+  background-color: #43b2ba;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+}

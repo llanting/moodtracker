@@ -1,7 +1,16 @@
 #stats {
-  height: 60vh;
-  padding: 50px 50px;
   background-color: #43b2ba;
-  margin: 50px;
   border-radius: 5px;
+  margin: 10px;
+
+}
+
+#stats h3 {
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
+}
+
+.stats-text {
+  margin: 10px;
 }

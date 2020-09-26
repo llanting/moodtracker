@@ -1,7 +1,20 @@
 #list {
-  height: 60vh;
-  padding: 50px 50px;
   background-color: #43b2ba;
-  margin: 50px;
   border-radius: 5px;
+  margin: 10px;
+
+}
+
+#list h3 {
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
+}
+
+.listitem {
+  padding: 10px;
+}
+
+.listsub {
+  padding-left: 25px;
 }
